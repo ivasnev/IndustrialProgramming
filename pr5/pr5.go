@@ -1,8 +1,10 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"math"
+	"os"
 	"strconv"
 	"strings"
 )
@@ -252,8 +254,8 @@ func task_2_4() {
 	// Выбор самого длинного слова в предложении
 	var sentence string
 	fmt.Println("Введите предложение:")
-	fmt.Scan(&sentence)
-
+	reader := bufio.NewReader(os.Stdin)
+	sentence, _ = reader.ReadString('\n')
 	longestWord := findLongestWord(sentence)
 	fmt.Printf("Самое длинное слово: %s\n", longestWord)
 }
